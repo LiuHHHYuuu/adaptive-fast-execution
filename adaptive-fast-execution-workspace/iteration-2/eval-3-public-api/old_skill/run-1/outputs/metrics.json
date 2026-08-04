@@ -1,0 +1,19 @@
+{
+  "iteration": 2,
+  "eval": 3,
+  "variant": "old_skill",
+  "run": 1,
+  "task_type": "cross-service-public-api-contract-change",
+  "repository_available": false,
+  "baseline_gate_applied": true,
+  "implementation_started": false,
+  "files_modified_outside_output": 0,
+  "clarifying_questions_asked": 1,
+  "approaches_proposed": 0,
+  "design_presented": false,
+  "design_approved": false,
+  "design_document_written": false,
+  "implementation_plan_written": false,
+  "blocked_at_gate": "clarification",
+  "response_language": "zh-CN"
+}

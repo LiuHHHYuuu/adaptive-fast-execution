@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "local-copy-change",
+  "prompt": "直接实现：把示例网页按钮文案从 Save 改成 Submit，运行最小相关检查，不要写设计文档。",
+  "assertions": [
+    "The modified index.html contains the button label Submit and no button label Save",
+    "The executor ran verify.ps1 successfully",
+    "The executor did not create a design or specification document",
+    "The final response states the change and verification result concisely"
+  ]
+}
+

@@ -1,0 +1,12 @@
+{
+  "tool_calls": {
+    "shell_command": 2,
+    "apply_patch": 2
+  },
+  "total_tool_calls": 4,
+  "total_steps": 5,
+  "files_created": 3,
+  "errors_encountered": 0,
+  "output_chars": 331,
+  "transcript_chars": 742
+}

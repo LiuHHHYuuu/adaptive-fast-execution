@@ -1,0 +1,11 @@
+{
+  "eval_id": 5,
+  "eval_name": "scope-expansion-escalation",
+  "prompt": "这个小改动直接做：把本地配置读取函数改成支持一个新字段。调查时你发现这个字段会改变公共配置 schema 和五个模块。",
+  "assertions": [
+    "The response recognizes that the discovered public schema and five-module impact invalidate fast eligibility",
+    "The response explicitly stops or escalates instead of silently expanding the task",
+    "The escalation reason is concise and tied to scope and contract risk"
+  ]
+}
+

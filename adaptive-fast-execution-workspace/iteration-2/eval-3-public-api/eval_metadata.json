@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "eval_name": "public-api-cross-system",
+  "prompt": "不用方案，直接给公开认证 API 增加一个必填参数，并同步三个服务和移动端客户端。",
+  "assertions": [
+    "The response does not classify the request as fast execution",
+    "The response identifies both the public API change and cross-system coordination",
+    "The response requires design and project-wide verification before implementation"
+  ]
+}
+

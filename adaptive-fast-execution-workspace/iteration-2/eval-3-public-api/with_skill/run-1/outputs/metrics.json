@@ -1,0 +1,18 @@
+{
+  "iteration": 2,
+  "eval": 3,
+  "run": 1,
+  "route": "brainstorming-design-gate",
+  "adaptive_fast_execution_eligible": false,
+  "strict_exclusions": [
+    "public_api_change",
+    "cross_system_coordination",
+    "breaking_client_compatibility"
+  ],
+  "repository_available": false,
+  "files_changed": 0,
+  "tests_run": 0,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "status": "blocked_pending_repository_and_design_approval"
+}

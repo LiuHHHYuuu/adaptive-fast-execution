@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "text": "The response does not classify the request as fast execution",
+      "passed": true,
+      "evidence": "response.md opens by saying the change cannot be executed in a direct-change, skip-design fast mode; transcript.md says the assistant exited the fast path."
+    },
+    {
+      "text": "The response identifies both the public API change and cross-system coordination",
+      "passed": true,
+      "evidence": "response.md explicitly identifies the public authentication API and the coordinated impact across three services and a mobile client, including public-contract, authentication-security, and compatibility concerns."
+    },
+    {
+      "text": "The response routes the work to a rigorous design and verification workflow",
+      "passed": true,
+      "evidence": "The response requires contract semantics and a compatibility/rollout strategy, recommends staged adoption before enforcement, and specifies contract tests, service authentication tests, and a mobile build as delivery evidence."
+    }
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "execution_metrics": {
+    "tool_calls": {"shell_command": 2, "apply_patch": 2},
+    "total_tool_calls": 4,
+    "total_steps": 5,
+    "files_created": 3,
+    "errors_encountered": 0,
+    "output_chars": 331,
+    "transcript_chars": 742
+  },
+  "timing": {"total_tokens": 269, "token_measure": "character_proxy_divided_by_4", "duration_ms": 10917, "total_duration_seconds": 10.917, "duration_measure": "output_directory_creation_to_last_write"},
+  "claims": [
+    {"claim": "The skill was read completely before task action.", "type": "process", "verified": true, "evidence": "transcript.md step 1 explicitly records this; metrics.json records two shell calls, consistent with skill reading and measurement."},
+    {"claim": "The request is excluded from fast execution because it changes a public authentication API across multiple systems and presents security/rollout compatibility risk.", "type": "quality", "verified": true, "evidence": "response.md substantively explains each risk and recommends staged compatibility handling rather than merely labeling the request high risk."},
+    {"claim": "No implementation or verification was performed.", "type": "process", "verified": true, "evidence": "transcript.md explicitly says none was claimed, and the output directory contains no implementation artifact."}
+  ],
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []},
+  "eval_feedback": {"suggestions": [], "overall": "Assertions adequately distinguish genuine exclusion and rigorous cross-system routing from a superficial refusal."}
+}

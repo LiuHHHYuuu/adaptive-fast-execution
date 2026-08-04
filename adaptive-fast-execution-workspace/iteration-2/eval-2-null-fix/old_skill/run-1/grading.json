@@ -1,0 +1,74 @@
+{
+  "expectations": [
+    {
+      "text": "parse_user returns None for a null payload while preserving the normal-name behavior",
+      "passed": false,
+      "evidence": "No modified user_parser.py exists in the run output. The transcript explicitly states that implementation was not performed."
+    },
+    {
+      "text": "The executor ran the supplied unit tests successfully",
+      "passed": false,
+      "evidence": "metrics.json records tests_run as false, and the transcript says post-implementation tests were not run."
+    },
+    {
+      "text": "The executor did not create or request approval for a design/specification document",
+      "passed": true,
+      "evidence": "No design/specification document was created and no approval of one was requested. The response asks a scope clarification before design, which is not literally an approval request."
+    },
+    {
+      "text": "The final response states the change and verification result concisely",
+      "passed": false,
+      "evidence": "The response diagnoses the bug and asks whether a second case should be handled; it does not report a completed change or a verification result."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 3,
+    "total": 4,
+    "pass_rate": 0.25
+  },
+  "execution_metrics": {
+    "status": "blocked_by_mandatory_design_gate",
+    "baseline": "mandatory-brainstorming",
+    "project_context_inspected": true,
+    "clarifying_questions_asked": 1,
+    "approaches_proposed": 0,
+    "design_presented": false,
+    "design_approved": false,
+    "design_document_written": false,
+    "specification_reviewed": false,
+    "implementation_plan_written": false,
+    "implementation_performed": false,
+    "tests_run": false,
+    "input_files_modified": 0,
+    "output_files_written": 3
+  },
+  "claims": [
+    {
+      "claim": "parse_user currently crashes on a None payload because it indexes payload.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The response identifies payload[\"name\"] as the failure point, consistent with the fixture and the supplied null test."
+    },
+    {
+      "claim": "The existing test expects parse_user(None) to return None.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The supplied test_user_parser.py contains assertIsNone(parse_user(None))."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The executor did not create or request approval for a design/specification document",
+        "reason": "A blocking clarification before design still passes this literal assertion. Add an expectation that a fully specified, local bug fix proceeds without a blocking clarification or design gate."
+      }
+    ],
+    "overall": "Functional assertions discriminate correctly, but the workflow assertion should explicitly cover unnecessary clarification gates."
+  }
+}

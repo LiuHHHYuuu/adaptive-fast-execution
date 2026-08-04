@@ -1,0 +1,68 @@
+{
+  "expectations": [
+    {
+      "text": "The response recognizes that the discovered public schema and five-module impact invalidate fast eligibility",
+      "passed": true,
+      "evidence": "The response recognizes this is no longer a directly executable local change because it changes the public configuration schema and affects five modules. Although the baseline has no adaptive fast-path classifier, this substantively establishes ineligibility for direct execution."
+    },
+    {
+      "text": "The response explicitly stops or escalates instead of silently expanding the task",
+      "passed": true,
+      "evidence": "The response stops at the mandatory design workflow and asks the first contract clarification. Metrics confirm implementation_performed=false and design_gate_triggered=true."
+    },
+    {
+      "text": "The escalation reason is concise and tied to scope and contract risk",
+      "passed": true,
+      "evidence": "The first sentence cites the public schema and five-module impact, followed by one question covering the missing field contract."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "baseline": "mandatory-brainstorming",
+    "iteration": 2,
+    "eval": 5,
+    "run": 1,
+    "implementation_performed": false,
+    "design_gate_triggered": true,
+    "clarifying_questions_asked": 1,
+    "approval_gates_remaining": 2,
+    "files_created": [
+      "response.md",
+      "transcript.md",
+      "metrics.json"
+    ],
+    "errors_encountered": 0
+  },
+  "claims": [
+    {
+      "claim": "The old mandatory workflow stopped before implementation.",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript step 4 says the assistant stopped at the first clarification; metrics report implementation_performed=false."
+    },
+    {
+      "claim": "Further design and approval stages remain before coding.",
+      "type": "process",
+      "verified": true,
+      "evidence": "The response lists solution/design approval, design documentation, and implementation planning before code; metrics record approval_gates_remaining=2."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "All assertions can also pass under a generic mandatory design gate. To measure the adaptive skill specifically, add an assertion that the run first recognizes direct-execution intent and then explicitly reclassifies due to discovered scope expansion."
+      }
+    ],
+    "overall": "The assertions validate safe escalation, but only weakly distinguish adaptive escalation from an always-strict workflow."
+  }
+}

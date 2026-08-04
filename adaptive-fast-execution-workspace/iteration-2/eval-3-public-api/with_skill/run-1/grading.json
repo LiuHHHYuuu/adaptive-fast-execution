@@ -1,0 +1,70 @@
+{
+  "expectations": [
+    {
+      "text": "The response does not classify the request as fast execution",
+      "passed": true,
+      "evidence": "The response states that this is not a fast-path task, and the transcript routing evidence records `Fast-path eligible: no` and `Selected route: brainstorming/design gate`."
+    },
+    {
+      "text": "The response identifies both the public API change and cross-system coordination",
+      "passed": true,
+      "evidence": "The response identifies a changed public authentication API contract and coordination across three services plus the mobile client; metrics list `public_api_change` and `cross_system_coordination` as strict exclusions."
+    },
+    {
+      "text": "The response requires design and project-wide verification before implementation",
+      "passed": true,
+      "evidence": "Before implementation, the response requires confirmation of a versioned staged-migration design and acceptance criteria covering service contract tests, mobile request tests, old/new compatibility tests, and end-to-end authentication tests."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "iteration": 2,
+    "eval": 3,
+    "run": 1,
+    "route": "brainstorming-design-gate",
+    "adaptive_fast_execution_eligible": false,
+    "strict_exclusions": [
+      "public_api_change",
+      "cross_system_coordination",
+      "breaking_client_compatibility"
+    ],
+    "repository_available": false,
+    "files_changed": 0,
+    "tests_run": 0,
+    "tests_passed": 0,
+    "tests_failed": 0,
+    "status": "blocked_pending_repository_and_design_approval"
+  },
+  "claims": [
+    {
+      "claim": "No implementation or tests were completed because no repository was provided.",
+      "type": "process",
+      "verified": true,
+      "evidence": "The transcript states that no real repository was available and no implementation or tests were claimed; metrics report zero files changed and zero tests run."
+    },
+    {
+      "claim": "A newly required public authentication parameter can break existing clients.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "This follows directly from the requested contract change: existing clients do not send a newly required parameter, so immediate enforcement can reject them."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The assertions verify routing quality but not whether repeated confirmation gates are avoided after the one consequential design approval; a follow-up-turn eval would test that property."
+      }
+    ],
+    "overall": "Strong routing assertions for a single turn, but the eval does not exercise the reduced-repeat-approval behavior."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "blocked_by_mandatory_design_gate",
+  "baseline": "mandatory-brainstorming",
+  "project_context_inspected": true,
+  "clarifying_questions_asked": 1,
+  "approaches_proposed": 0,
+  "design_presented": false,
+  "design_approved": false,
+  "design_document_written": false,
+  "specification_reviewed": false,
+  "implementation_plan_written": false,
+  "implementation_performed": false,
+  "tests_run": false,
+  "input_files_modified": 0,
+  "output_files_written": 3
+}

@@ -1,0 +1,14 @@
+{
+  "iteration": 2,
+  "eval": 2,
+  "run": 1,
+  "route": "adaptive-fast-execution",
+  "eligible": true,
+  "files_changed": 1,
+  "tests_run": 2,
+  "tests_passed": 2,
+  "tests_failed": 0,
+  "verification_command": "python -m unittest -v",
+  "verification_exit_code": 0,
+  "status": "passed"
+}

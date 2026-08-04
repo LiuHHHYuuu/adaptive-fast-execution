@@ -1,0 +1,65 @@
+{
+  "expectations": [
+    {
+      "text": "The modified index.html contains the button label Submit and no button label Save",
+      "passed": true,
+      "evidence": "Inspected index.html: the only button is <button id=\"save-button\">Submit</button>; the former visible label Save is absent."
+    },
+    {
+      "text": "The executor ran verify.ps1 successfully",
+      "passed": true,
+      "evidence": "Transcript step 6 records PASS: button label is Submit. The grader independently reran verify.ps1 in the output directory and received the same PASS result with exit code 0."
+    },
+    {
+      "text": "The executor did not create or request approval for a design/specification document",
+      "passed": true,
+      "evidence": "The transcript routes directly to the fast path and contains no design/specification proposal or approval request; the output directory contains only the fixture, response, transcript, and metrics artifacts."
+    },
+    {
+      "text": "The final response states the change and verification result concisely",
+      "passed": true,
+      "evidence": "response.md briefly states that Save was changed to Submit and that verify.ps1 passed with PASS: button label is Submit."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "shell_command": 4,
+      "apply_patch": 4
+    },
+    "total_tool_calls": 8,
+    "total_steps": 7,
+    "files_created": 5,
+    "errors_encountered": 2,
+    "output_chars": 97,
+    "transcript_chars": 407
+  },
+  "claims": [
+    {
+      "claim": "The button label was changed from Save to Submit.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Direct inspection of index.html shows the Submit label and no visible Save label."
+    },
+    {
+      "claim": "verify.ps1 passes.",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Independently rerun by the grader: PASS: button label is Submit, exit code 0."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "The assertions are substantive for this small fixture: they check the actual edit, executable verification, workflow behavior, and handoff quality."
+  }
+}

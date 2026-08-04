@@ -1,0 +1,66 @@
+{
+  "expectations": [
+    {
+      "text": "The response does not classify the request as fast execution",
+      "passed": true,
+      "evidence": "The response stops at the mandatory clarification/design gate and does not classify or execute the request as a fast-path task."
+    },
+    {
+      "text": "The response identifies both the public API change and cross-system coordination",
+      "passed": true,
+      "evidence": "The response explicitly discusses the public API contract, propagation and validation across three services, and mobile-client compatibility."
+    },
+    {
+      "text": "The response requires design and project-wide verification before implementation",
+      "passed": false,
+      "evidence": "It requires clarification, alternatives, design approval, specification, and an implementation plan, but it never explicitly requires project-wide or end-to-end verification before implementation."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 1,
+    "total": 3,
+    "pass_rate": 0.6667
+  },
+  "execution_metrics": {
+    "iteration": 2,
+    "eval": 3,
+    "variant": "old_skill",
+    "run": 1,
+    "task_type": "cross-service-public-api-contract-change",
+    "repository_available": false,
+    "baseline_gate_applied": true,
+    "implementation_started": false,
+    "files_modified_outside_output": 0,
+    "clarifying_questions_asked": 1,
+    "approaches_proposed": 0,
+    "design_presented": false,
+    "design_approved": false,
+    "design_document_written": false,
+    "implementation_plan_written": false,
+    "blocked_at_gate": "clarification",
+    "response_language": "zh-CN"
+  },
+  "claims": [
+    {
+      "claim": "The parameter details affect the public API contract, service propagation and validation, and mobile compatibility.",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Those are direct consequences of adding a required parameter across the named systems and are accurately identified in the response."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The response requires design and project-wide verification before implementation",
+        "reason": "Keep design and verification as separate expectations so a design-heavy response cannot obscure the absence of an explicit project-wide verification requirement."
+      }
+    ],
+    "overall": "The strict-routing behavior is observable, but separating design-gate and verification requirements would make the failure more diagnostic."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tool_calls": {
+    "shell_command": 3,
+    "apply_patch": 2
+  },
+  "total_tool_calls": 5,
+  "total_steps": 7,
+  "files_created": 3,
+  "errors_encountered": 0,
+  "output_chars": 498,
+  "transcript_chars": 1267,
+  "routing": "brainstorming_design_gate",
+  "fast_path_eligible": false,
+  "implementation_performed": false
+}

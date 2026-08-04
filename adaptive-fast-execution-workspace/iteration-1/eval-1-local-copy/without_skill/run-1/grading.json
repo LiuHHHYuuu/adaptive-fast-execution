@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "The modified index.html contains the button label Submit and no button label Save",
+      "passed": true,
+      "evidence": "Direct inspection found <button id=\"save-button\">Submit</button> in index.html and no Save button label. Rerunning verify.ps1 exited 0 with 'PASS: button label is Submit'."
+    },
+    {
+      "text": "The executor ran verify.ps1 successfully",
+      "passed": true,
+      "evidence": "The transcript records '& .\\verify.ps1' and output 'PASS: button label is Submit'; an independent rerun also exited 0 with the same output."
+    },
+    {
+      "text": "The executor did not create a design or specification document",
+      "passed": true,
+      "evidence": "The outputs directory contains only index.html, verify.ps1, response.md, transcript.md, and metrics.json; no design or specification document exists."
+    },
+    {
+      "text": "The final response states the change and verification result concisely",
+      "passed": true,
+      "evidence": "response.md is two short lines stating that Save was changed to Submit and that verify.ps1 returned 'PASS: button label is Submit'."
+    }
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0},
+  "execution_metrics": {
+    "approximate_tool_call_counts": {"shell_command": 3, "apply_patch": 2, "total": 5},
+    "total_steps": 6,
+    "files_created": 5,
+    "errors_encountered": 0,
+    "output_chars": 101,
+    "transcript_chars": 640
+  },
+  "timing": {"total_tokens": 186, "token_measure": "character_proxy_divided_by_4", "duration_ms": 23662, "total_duration_seconds": 23.662, "duration_measure": "output_directory_creation_to_last_write"},
+  "claims": [
+    {"claim": "The button label was changed from Save to Submit.", "type": "factual", "verified": true, "evidence": "index.html contains a single button whose text is Submit; verify.ps1 passes."},
+    {"claim": "verify.ps1 passed.", "type": "process", "verified": true, "evidence": "Recorded in the transcript and independently reproduced with exit code 0."}
+  ],
+  "user_notes_summary": {"uncertainties": [], "needs_review": [], "workarounds": []},
+  "eval_feedback": {"suggestions": [], "overall": "Assertions are appropriately discriminating for this small local-copy change; the deterministic verifier checks both required label presence and obsolete label absence."}
+}

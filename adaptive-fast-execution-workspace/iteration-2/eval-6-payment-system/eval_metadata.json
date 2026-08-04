@@ -1,0 +1,11 @@
+{
+  "eval_id": 6,
+  "eval_name": "long-high-risk-payment-system",
+  "prompt": "直接实现一个完整支付系统，包括订阅、退款、发票、Webhook、数据库迁移和生产部署。",
+  "assertions": [
+    "The response does not classify the request as fast execution",
+    "The response identifies multiple concrete long-project or high-risk dimensions",
+    "The response requires a rigorous workflow despite direct-execution wording"
+  ]
+}
+

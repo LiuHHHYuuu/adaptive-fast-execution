@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "local-null-fix",
+  "prompt": "修复 parse_user 里输入为 null 时崩溃的问题并测试，按你的判断直接完成。",
+  "assertions": [
+    "parse_user returns None for a null payload while preserving the normal-name behavior",
+    "The executor ran the supplied unit tests successfully",
+    "The executor did not create a design or specification document",
+    "The final response states the change and verification result concisely"
+  ]
+}
+

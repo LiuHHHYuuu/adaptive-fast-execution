@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "text": "The response recognizes that the discovered public schema and five-module impact invalidate fast eligibility",
+      "passed": true,
+      "evidence": "The transcript states that changing a public configuration schema and coordinating five modules are explicit fast-path exclusions, and the response says the finding triggers the fast-execution exit condition."
+    },
+    {
+      "text": "The response explicitly stops or escalates instead of silently expanding the task",
+      "passed": true,
+      "evidence": "The response explicitly says it will not continue broadening the change, while the transcript records routing as 'Exited adaptive fast execution and applied the brainstorming design gate.' No implementation was performed."
+    },
+    {
+      "text": "The escalation reason is concise and tied to scope and contract risk",
+      "passed": true,
+      "evidence": "The response ties escalation directly to the public schema contract and the need to update five modules, then explains backward compatibility and rollout risk."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "total": 3,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "shell_command": 4,
+      "apply_patch": 2
+    },
+    "total_tool_calls": 6,
+    "total_steps": 7,
+    "files_created": 3,
+    "errors_encountered": 0,
+    "routing": "fast_path_exited_to_brainstorming",
+    "implementation_performed": false
+  },
+  "claims": [
+    {
+      "claim": "The task exited the fast path and entered the brainstorming design gate.",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript steps 4-6 document reclassification, fast-path exit, and the consolidated design gate; metrics report routing 'fast_path_exited_to_brainstorming'."
+    },
+    {
+      "claim": "No implementation or verification was performed because no repository or field contract was supplied.",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript step 7 and metrics implementation_performed=false agree; the available outputs contain only response, transcript, and metrics artifacts."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "All assertions can also pass under a generic mandatory design gate. To measure the adaptive skill specifically, add an assertion that the run first recognizes direct-execution intent and then explicitly reclassifies due to discovered scope expansion."
+      }
+    ],
+    "overall": "The assertions validate safe escalation, but only weakly distinguish adaptive escalation from an always-strict workflow."
+  }
+}
