@@ -26,6 +26,7 @@
 - `skills/brainstorming/SKILL.md`：只对 consequential work 启用的设计门槛。
 - `skills/adaptive-fast-execution/evals/`：评测与夹具。
 - `adaptive-fast-execution-workspace/`：两轮运行和独立评分证据。
+- `templates/`：无需平台 API 的 X、小红书发布模板与可复制示例。
 
 ## 使用
 

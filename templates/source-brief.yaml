@@ -1,0 +1,27 @@
+project: ""
+version: ""
+audience: ""
+one_sentence_problem: ""
+one_sentence_solution: ""
+
+evidence:
+  - claim: ""
+    value: ""
+    source: ""
+
+limitations:
+  - ""
+
+do_not_claim:
+  - "未被当前证据支持的速度、Token、收入或增长结论"
+
+links:
+  github: ""
+  report: ""
+
+assets:
+  cover: ""
+  gallery: []
+
+call_to_action: ""
+
